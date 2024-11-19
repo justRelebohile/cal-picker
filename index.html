@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Responsive Date Picker Dropdown</title>
+<link rel="stylesheet" href="styles.css">
+<script src="script.js" defer></script> 
+<style>
+  /* Basic button styling */
+ 
+  /* Dropdown content styling */
+ 
+    
+
+
+</style>
+</head>
+<body>
+
+<div style="position: relative; display: inline-block;">
+  <button class="dropdown-button" onclick="toggleDropdown()"><span id="selectedfromdropdown">yyyy/mm/dd</span><span class="calendar-icon"></span></button>
+    
+  <div id="dropdown-content" class="dropdown-content">
+    <div class="dropdown-row">
+      <div class="dropdown-column">
+        <ul  id="date-selector" class="calendar-dropdown-links">
+           
+            <li><a href="#" class="active" onclick="selectDay(this)">Today</a></li>
+            <li><a href="#"  onclick="selectYesterday(this)">Yesterday</a></li>
+            <li><a href="#"  onclick="selectWeek(this)">This Week</a></li>
+        
+            <li><a href="#"  onclick="selectMonth(this)">This Month</a></li>
+            <li><p style="font-size: 20px;">Customize(Range)</p></li>
+            <li><a href="#"  onclick="withinMonth(this)">In a Month</a></li>
+            <li><a href="#"  onclick="selectCustom(this)">Between Months</a></li>
+        </ul>
+      </div>
+      <div class="dropdown-column">
+            <!--<input type="date" id="date-picker-1">-->
+            <div class="calendar">
+                <div class="calendar-header">
+                <span class="calendar-nav" onclick="changeMonth(-1, 'from')">&#10094;</span>
+                <h2 id="from-month-year" class="monthyear"></h2>
+                <!--<span class="calendar-nav" id="from-next-nav" style="visibility: hidden;" onclick="changeMonth(1, 'from')">&#10095;</span>-->
+                <span class="calendar-nav" id="from-next-nav" onclick="changeMonth(1, 'from')">&#10095;</span>
+                </div>
+                <div class="calendar-weekdays" >
+                <div>Sun</div>
+                <div>Mon</div>
+                <div>Tue</div>
+                <div>Wed</div>
+                <div>Thu</div>
+                <div>Fri</div>
+                <div>Sat</div>
+                </div>
+                <div class="calendar-days" id="from-calendar-days"></div>
+            </div>
+
+            <!--<div style="padding-top: 10px;">
+                <label for="date-picker-1" style="top: 10px;">From:</label>
+                <input type="text" placeholder="YYYY-MM-DD" pattern="\d{4}-\d{2}-\d{2}">
+            </div>--> 
+        </div>
+        <div class="dropdown-column">
+            
+            <div class="calendar" style="display: none;">
+                <div class="calendar-header">
+                <span class="calendar-nav" id="to-previous-nav" onclick="changeMonth(-1, 'to')">&#10094;</span>
+                <h2 id="to-month-year" class="monthyear"></h2>
+                <span class="calendar-nav" onclick="changeMonth(1, 'to')">&#10095;</span>
+                </div>
+                <div class="calendar-weekdays">
+                <div>Sun</div>
+                <div>Mon</div>
+                <div>Tue</div>
+                <div>Wed</div>
+                <div>Thu</div>
+                <div>Fri</div>
+                <div>Sat</div>
+                </div>
+                <div class="calendar-days" id="to-calendar-days"></div>
+            </div>
+
+            <!--<div style="padding-top: 10px;">
+            <label for="date-picker-2" style="top: 10px;">To:</label>
+            <input type="text" placeholder="YYYY-MM-DD" pattern="\d{4}-\d{2}-\d{2}">
+            </div>-->
+
+        </div>
+
+      </div>
+      
+    
+      <div style="display: flex; justify-content: flex-end; gap: 10px; margin-top: 15px;">
+        <input type="text" id="filtereddate" placeholder="YYYY-MM-DD" pattern="\d{4}-\d{2}-\d{2}">
+        <a href="#" class="submitcancel_links" onclick="closeDropdown()">Cancel</a>
+        <a href="#" class="submitcancel_links">Apply</a>
+    </div>
+    
+
+    </div>
+    
+     
+
+  </div>
+</div>
+
+<script>
+
+
+ 
+
+</script>
+
+</body>
+</html>
