@@ -83,7 +83,7 @@ const template = `
 
   function initializeCalendar() {
     // Check for elements with the "appointment" class
-    const appointmentDivs = document.querySelectorAll(".appointment");
+    const appointmentDivs = document.querySelectorAll(".cal-picker");
 
     if (appointmentDivs.length > 0) {
         appointmentDivs.forEach(div => {
