@@ -18,11 +18,16 @@
 </head>
 <body>
 
-<div style="position: relative; display: inline-block;">
+
+
+  <div class="appointment" style=" display: flex; justify-content: center;"></div>
+
+
+<!--<div style="position: relative; display: inline-block;">
   <button class="dropdown-button" onclick="toggleDropdown()"><span id="selectedfromdropdown">yyyy/mm/dd</span><span class="calendar-icon"></span></button>
     
   <div id="dropdown-content" class="dropdown-content">
-    <div class="dropdown-row">
+    <div class="dropdown-row-cal">
       <div class="dropdown-column">
         <ul  id="date-selector" class="calendar-dropdown-links">
            
@@ -37,12 +42,10 @@
         </ul>
       </div>
       <div class="dropdown-column">
-            <!--<input type="date" id="date-picker-1">-->
             <div class="calendar">
                 <div class="calendar-header">
                 <span class="calendar-nav" onclick="changeMonth(-1, 'from')">&#10094;</span>
                 <h2 id="from-month-year" class="monthyear"></h2>
-                <!--<span class="calendar-nav" id="from-next-nav" style="visibility: hidden;" onclick="changeMonth(1, 'from')">&#10095;</span>-->
                 <span class="calendar-nav" id="from-next-nav" onclick="changeMonth(1, 'from')">&#10095;</span>
                 </div>
                 <div class="calendar-weekdays" >
@@ -57,10 +60,6 @@
                 <div class="calendar-days" id="from-calendar-days"></div>
             </div>
 
-            <!--<div style="padding-top: 10px;">
-                <label for="date-picker-1" style="top: 10px;">From:</label>
-                <input type="text" placeholder="YYYY-MM-DD" pattern="\d{4}-\d{2}-\d{2}">
-            </div>--> 
         </div>
         <div class="dropdown-column">
             
@@ -81,37 +80,21 @@
                 </div>
                 <div class="calendar-days" id="to-calendar-days"></div>
             </div>
-
-            <!--<div style="padding-top: 10px;">
-            <label for="date-picker-2" style="top: 10px;">To:</label>
-            <input type="text" placeholder="YYYY-MM-DD" pattern="\d{4}-\d{2}-\d{2}">
-            </div>-->
-
         </div>
-
       </div>
-      
-    
+     
       <div style="display: flex; justify-content: flex-end; gap: 10px; margin-top: 15px;">
         <input type="text" id="filtereddate" placeholder="YYYY-MM-DD" pattern="\d{4}-\d{2}-\d{2}">
         <a href="#" class="submitcancel_links" onclick="closeDropdown()">Cancel</a>
         <a href="#" class="submitcancel_links">Apply</a>
+      </div>
+    
     </div>
     
-
-    </div>
-    
-     
-
   </div>
-</div>
-
-<script>
+</div>-->
 
 
- 
-
-</script>
 
 </body>
 </html>
