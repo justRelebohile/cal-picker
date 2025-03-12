@@ -289,7 +289,7 @@ function setFilteredDate(start, end = start) {
 
 
 function applyButton(){
-  alert('hello'); // Test if the alert works here
+  //alert('hello'); // Test if the alert works here
   getselectedfromdropdown().innerHTML = get_filtered_input().value;
   const content = document.getElementById("dropdown-content-cal");
   const event = new CustomEvent('applyClicked');
