@@ -4,10 +4,27 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Date Picker</title>
-<link rel="stylesheet" href="styles.css">
-<script src="script.js" defer></script> 
+<!--<link rel="stylesheet" href="styles.css">
+<script src="script.js" defer></script>-->
+
+<!--<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/justRelebohile/cal-picker@latest/styles.css">
+<script src="https://cdn.jsdelivr.net/gh/justRelebohile/cal-picker@latest/script.js"></script>
+   -->
+
 </head>
 <body>
   <div class="cal-picker" style=" display: flex; justify-content: center;"></div>
 </body>
+<script>
+  document.addEventListener("DOMContentLoaded", function() {
+    
+    document.addEventListener('applyClicked', function(event) {
+
+      const selectedValue = event.detail.selectedDate;  // Access the selected value passed with the event
+      alert('Selected date: ' + selectedValue);
+    });
+
+
+  });
+</script>
 </html>

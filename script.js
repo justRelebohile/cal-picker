@@ -1,7 +1,7 @@
 
 const template = `
   <div style="position: relative; display: inline-block;">
-  <button class="dropdown-button-cal" onclick="toggleDropdown()"><span id="selectedfromdropdown">yyyy/mm/dd</span><span class="calendar-icon-cal"></span></button>
+  <button class="dropdown-button-cal" onclick="datetoggleDropdown()"><span id="selectedfromdropdown">yyyy/mm/dd</span><span class="calendar-icon-cal"></span></button>
       
     <div id="dropdown-content-cal" class="dropdown-content-cal">
       <div class="dropdown-row-cal">
@@ -289,16 +289,17 @@ function setFilteredDate(start, end = start) {
 
 
 function applyButton(){
-  //alert('hello'); // Test if the alert works here
+
   getselectedfromdropdown().innerHTML = get_filtered_input().value;
+
   const content = document.getElementById("dropdown-content-cal");
-  const event = new CustomEvent('applyClicked');
+  const event = new CustomEvent('applyClicked', {
+    detail: { selectedDate: get_filtered_input().value }  // Pass the selected value in the event
+    
+  });
+
   document.dispatchEvent(event);
-  
-  //getselectedfromdropdown().innerHTML = get_filtered_input().value;
-  //const content = document.getElementById("dropdown-content-cal");
-  //const event = new CustomEvent('applyClicked');
- 
+
   content.classList.remove("show");
   content.style.left = '';  // Reset position
   content.style.right = '';
@@ -320,9 +321,7 @@ function highlightDay(day) {
 
 
 
-function toggleDropdown() {
-
-  
+function datetoggleDropdown() {
 
   const content = document.getElementById("dropdown-content-cal");
 
@@ -363,7 +362,9 @@ function toggleDropdown() {
 
     if (index === 0) {
       // Assuming 'today' and 'highlightDay' are defined
-      highlightDay(today.getDate());
+      //highlightDay(today.getDate());
+      highlightDay(new Date().getDate());
+
     }
   }
 }
