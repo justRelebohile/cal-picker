@@ -291,13 +291,14 @@ function setFilteredDate(start, end = start) {
 function applyButton(){
   getselectedfromdropdown().innerHTML = get_filtered_input().value;
   const content = document.getElementById("dropdown-content-cal");
+  const event = new CustomEvent('applyClicked');
+  document.dispatchEvent(event);
+  alert('hello');
   content.classList.remove("show");
   content.style.left = '';  // Reset position
   content.style.right = '';
   //closeDropdown();
-  const event = new CustomEvent('applyClicked');
-  document.dispatchEvent(event);
-  alert('hello');
+  
   
 }
 
