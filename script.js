@@ -295,6 +295,8 @@ function applyButton(){
   content.style.left = '';  // Reset position
   content.style.right = '';
   //closeDropdown();
+  const event = new CustomEvent('applyClicked');
+  document.dispatchEvent(event);
   
 }
 
