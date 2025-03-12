@@ -297,6 +297,7 @@ function applyButton(){
   //closeDropdown();
   const event = new CustomEvent('applyClicked');
   document.dispatchEvent(event);
+  alert('hello');
   
 }
 
