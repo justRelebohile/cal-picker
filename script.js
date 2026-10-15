@@ -81,7 +81,7 @@ const template = `
   });
 
 
-  function initializeCalendar() {
+  /**function initializeCalendar() {
     // Check for elements with the "appointment" class
     const appointmentDivs = document.querySelectorAll(".cal-picker");
 
@@ -101,7 +101,32 @@ const template = `
     fromDate = new Date();
     toDate = new Date(fromDate);
     toDate.setMonth(fromDate.getMonth() + 1);
+}**/
+
+
+
+function initializeCalendar() {
+    const calendarContainers = document.querySelectorAll(".cal-picker");
+
+    // This page does not use the calendar picker.
+    if (calendarContainers.length === 0) {
+        return;
+    }
+
+    calendarContainers.forEach(div => {
+        div.innerHTML = template;
+        renderCalendar('from');
+    });
+
+    defaultRange();
+
+    monthdate = new Date();
+    fromDate = new Date();
+    toDate = new Date(fromDate);
+    toDate.setMonth(fromDate.getMonth() + 1);
 }
+
+
 
   let monthfromDate = new Date();
   let monthtoDate = null;
