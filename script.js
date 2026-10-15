@@ -136,7 +136,7 @@ function initializeCalendar() {
   dateTo.setMonth(dateFrom.getMonth() + 1);
 
 
-  function defaultRange(){
+  /**function defaultRange(){
   
     const filtereddate = get_filtered_input();
   
@@ -148,7 +148,31 @@ function initializeCalendar() {
     filtereddate.value = `${formattedDate}`;  
 
 
-  }
+  }**/
+
+
+ 
+function defaultRange() {
+    const filtereddate = get_filtered_input();
+
+    // Stop if the expected input element doesn't exist.
+    if (!filtereddate) {
+        console.warn(
+            "defaultRange(): get_filtered_input() did not find the date input."
+        );
+        return;
+    }
+
+    const today = new Date();
+    const formattedDate =
+        today.getFullYear() + '-' +
+        String(today.getMonth() + 1).padStart(2, '0') + '-' +
+        String(today.getDate()).padStart(2, '0');
+
+    filtereddate.value = formattedDate;
+}
+
+
 
   function get_filtered_input(){
      return document.getElementById("filtereddate");
